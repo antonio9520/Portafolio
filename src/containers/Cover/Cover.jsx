@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import image from "../../resources/img/cover-laptop.jpg";
+import image from "../../resources/img/laptop8.jpg";
 import Layout from "../../components/Layout/Layout/Layout";
 import "./style.css";
 import Target from "./components/target/Target";
@@ -14,16 +14,14 @@ const Cover = () => {
         <Grid container className="container-Info">
           <Grid item xs={12} sm={12} md={12}>
             <div className="vidContent">
-             <Target/>
+              <Target />
               <div
                 style={{
                   width: "100%",
                   textAlign: "center",
                   paddingTop: "20px",
                 }}
-              >
-                
-              </div>
+              ></div>
             </div>
           </Grid>
           <Grid

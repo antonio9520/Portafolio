@@ -9,7 +9,7 @@ const Header = () => {
         <nav className="nav-primary">
           <ul>
           <li>
-              <a href='/'><Typography variant="h6" gutterBottom>About Me.</Typography></a>
+              <a href='/'><Typography variant="h6" gutterBottom>About Me</Typography></a>
             </li>
             <li>
               <a href='/'><Typography variant="h6" gutterBottom>Job’s Experience</Typography></a>

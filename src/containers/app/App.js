@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import { Layout } from "../../components";
-import { Cover } from "../";
-import BackImage from "../../resources/img/cover-laptop.jpg";
-import { Grid } from "@material-ui/core";
+import { Cover, JobExperience, Knowledge, Proyects } from "../";
+
 
 function App() {
   return (
     <>
-    
       <Cover />
+      <JobExperience />
+      <Knowledge />
+      <Proyects />
     </>
   );
 }

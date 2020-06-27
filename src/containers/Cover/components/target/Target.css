@@ -1,52 +1,47 @@
 .overlay {
-  background: rgb(255,255,255);
-  opacity: .9;
-   
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    z-index: -1;
-    -webkit-box-shadow: 0px 21px 28px -8px #000000; 
-    box-shadow: 0px 21px 28px -8px #000000;
-  } 
-
-  .container-img-perfil {
-    text-align: center;
-    
-    background-color: transparent;
-  }
-  
-  .image-perfil {
-    border-radius: 150px;
-    width: 200px;
-    height: 200px;
-    margin-top: -100px;
-    -webkit-box-shadow: 0px 21px 28px -8px #000000; 
-    box-shadow: 0px 21px 28px -8px #000000;
-    
-  }
-
-  .card-cover {
-   position: relative;
-      
-  }
-
-  .title-target{
-      padding-top: 15px;
-      text-align: center;
-      color: #555555
-  }
-
-  .content-target{
-    padding: 20px;
-    text-align: center;
-    color: #555555
+  background: rgb(255, 255, 255);
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: -1;
+  -webkit-box-shadow: 0px 21px 28px -8px #000000;
+  box-shadow: 0px 21px 28px -8px #000000;
 }
 
-.itemTarget{
+.container-img-perfil {
+  text-align: center;
 
+  background-color: transparent;
 }
-  
+
+.image-perfil {
+  border-radius: 150px;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  -webkit-box-shadow: 0px 21px 28px -8px #000000;
+  box-shadow: 0px 21px 28px -8px #000000;
+}
+
+.card-cover {
+  position: relative;
+}
+
+.title-target {
+  padding-top: 15px;
+  text-align: center;
+  color: #555555;
+}
+
+.content-target {
+  padding: 20px;
+  text-align: center;
+  color: #555555;
+}
+
+.itemTarget {
+}
