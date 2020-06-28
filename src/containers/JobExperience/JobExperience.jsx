@@ -14,15 +14,16 @@ const JobExperience = () => {
     }, 500);
     setTimeout(() => {
       setImage(img)
-    }, 600);
+    }, 1000);
   };
+
   return (
     <div className="container-job">
       {image ? <img className="img-job" alt="jobExp" src={image}></img> : null}
 
       <div className="overlay-job"></div>
       <div className="cont-body-job">
-        <Typography variant="h4" className="job-title">
+        <Typography  variant="h4" className="job-title">
           Job´s Experience
         </Typography>
         <div className="container-line">

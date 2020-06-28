@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Typography, IconButton } from "@material-ui/core";
 import img from "../../../resources/img/laptop2.jpg";
-import img2 from "../../../resources/img/laptop4.jpg";
+import img2 from "../../../resources/img/laptop6.jpg";
 
 const CardArrow = (props) => {
   const { title, sub1, year, sub2, body, icon, changeImage, id } = props;

@@ -1,5 +1,4 @@
 .container-job {
-  margin-top: -22px;
   padding: 0;
   background-color: black;
   min-height: 500px;
@@ -30,11 +29,13 @@
   background-size: cover;
   background-position: center;
   position: absolute;
-  -webkit-animation: fadeInFromNone 0.5s ease-out;
-  -moz-animation: fadeInFromNone 0.5s ease-out;
-  -o-animation: fadeInFromNone 0.5s ease-out;
-  animation: fadeInFromNone 0.5s ease-out;
+  -webkit-animation: fadeInFromNone 0.5s ease-in-out;
+  -moz-animation: fadeInFromNone 0.5s ease-in-out;
+  -o-animation: fadeInFromNone 0.5s ease-in-out;
+  animation: fadeInFromNone 0.5s ease-in-out;
+  
 }
+/*****FADEIN***/
 @-webkit-keyframes fadeInFromNone {
   0% {
     display: none;
@@ -103,13 +104,16 @@
   }
 }
 
+
+
+
 .cont-body-job {
   position: relative;
 }
 
 .overlay-job {
   background: rgb(0, 0, 0);
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
