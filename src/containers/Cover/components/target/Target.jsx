@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import "./Target.css";
-import perfil from "../../../../resources/img/perfil-2.jpg";
+import perfil from "../../../../resources/img/perfil-4.jpg";
 const style = {
   containerTarget: {
     borderRadius: "10px",
@@ -31,9 +31,7 @@ const Target = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               turpis orci, placerat vitae mi eget, posuere mattis mi. Vestibulum
               tristique pulvinar hendrerit. Pellentesque porta erat et nunc
-              dignissim dignissim. Sed tempus eros id augue semper tempor. Duis
-              at posuere nisl. Cras in lobortis libero. Donec et urna eget erat
-              semper maximus ac eget arcu.{" "}
+              dignissim dignissim. Sed tempus eros id augue semper tempor.
             </Typography>
           </div>
         </div>

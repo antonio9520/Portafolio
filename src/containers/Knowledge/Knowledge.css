@@ -1,36 +1,29 @@
 .container-Know {
   width: 100%;
-  height: 100vh;
+  height: 130vh;
   position: relative;
   /* background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(38,117,96,1) 100%); */
-
 }
 
-.img-know{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
+.img-know {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
 }
 
-.cont-body-know{
-    position: relative;
+.cont-body-know {
+  position: relative;
 }
-.typo-title-know{
-    padding-top: 30px;
-    color: white;
-    text-align: center;
+.typo-title-know {
+  padding-top: 120px;
+  color: white;
+  text-align: center;
 }
-.avatar-int {
-    width: 25px !important;
-    height: 25px !important;
-    background: #34db31 !important;
-    margin-right: 10px !important;
-  }
 
 /* */
 /* .overlay-know {

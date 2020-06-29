@@ -21,7 +21,7 @@ const Cover = () => {
                   textAlign: "center",
                   paddingTop: "20px",
                 }}
-              ></div>
+              >afaa</div>
             </div>
           </Grid>
           <Grid

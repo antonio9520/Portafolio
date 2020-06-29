@@ -30,9 +30,14 @@ const CardArrow = (props) => {
         {icon ? (
           <div className="cont-icon">
             <div className={flip ? "card-front-active" : "card-front"}>
-              <IconButton style={{ color: "white", border: "1px solid white" }}>
-                {icon}
-              </IconButton>
+              <span>
+                <IconButton
+                  className="animation-button"
+                  style={{ color: "white", border: "1px solid white" }}
+                >
+                  {icon}
+                </IconButton>
+              </span>
             </div>
           </div>
         ) : null}

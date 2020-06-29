@@ -9,12 +9,13 @@ import { School, Laptop } from "@material-ui/icons";
 const JobExperience = () => {
   const [image, setImage] = useState();
   const changeImage = (img) => {
-    setTimeout(() => {
-      setImage(null)
-    }, 500);
-    setTimeout(() => {
-      setImage(img)
-    }, 1000);
+    // setTimeout(() => {
+    //   setImage(null)
+    // }, 500);
+    // setTimeout(() => {
+    //   setImage(img)
+    // }, 1000);
+    setImage(img)
   };
 
   return (

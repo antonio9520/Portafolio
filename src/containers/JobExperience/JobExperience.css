@@ -1,13 +1,14 @@
 .container-job {
   padding: 0;
-  background-color: black;
+  background: rgb(51,112,65);
+background: radial-gradient(circle, rgba(51,112,65,1) 0%, rgba(17,27,17,1) 100%);
   min-height: 500px;
   position: relative;
-  height: 100vh;
+  height: 130vh;
 }
 .job-title {
-  padding-top: 40px;
-  padding-bottom: 120px;
+  padding-top:120px;
+  padding-bottom: 140px;
   text-align: center;
   color: white;
 }
@@ -29,10 +30,10 @@
   background-size: cover;
   background-position: center;
   position: absolute;
-  -webkit-animation: fadeInFromNone 0.5s ease-in-out;
-  -moz-animation: fadeInFromNone 0.5s ease-in-out;
-  -o-animation: fadeInFromNone 0.5s ease-in-out;
-  animation: fadeInFromNone 0.5s ease-in-out;
+  -webkit-animation: fadeInFromNone 2s ease-in-out;
+  -moz-animation: fadeInFromNone 2s ease-in-out;
+  -o-animation: fadeInFromNone 2s ease-in-out;
+  animation: fadeInFromNone 2s ease-in-out;
   
 }
 /*****FADEIN***/

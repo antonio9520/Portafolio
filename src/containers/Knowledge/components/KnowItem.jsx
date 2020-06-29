@@ -12,8 +12,8 @@ const KnowItem = (props) => {
           {title}
         </Typography>
         <div className="cont-items-know">
-          {list.map((list) => (
-            <div className="cont-avatar-know">
+          {list.map((list, index) => (
+            <div key={index} className="cont-avatar-know">
               <Avatar className={list.className}>{list.avatar}</Avatar>
               <Typography variant="body1">{list.typo}</Typography>
             </div>
