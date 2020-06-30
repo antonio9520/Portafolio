@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   proyectos: [],
+  imagen: [],
   loading: false,
   error: false,
 };

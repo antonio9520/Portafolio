@@ -4,6 +4,8 @@ import {
   OBTENER_PROYECTOS_EXITO,
 } from "../types";
 import Axios from "../config/axios";
+
+
 export function obtenerProyectosAction() {
   return async (dispatch) => {
     dispatch(obtenerProyectos());
@@ -29,3 +31,5 @@ const obtenerProyectosExito = (data) => ({
 const obtenerError = () => ({
   type: OBTENER_PROYECTOS_ERROR,
 });
+
+

@@ -1,6 +1,14 @@
 .container-proyects{
     width: 100%;
-    background-color: brown;
+    background-color: #ffffff;
     height: 130vh;
     position: relative;
+    text-align: center;
+    padding-top: 100px;
+    
+}
+
+.title-proyect{
+    padding-bottom: 100px;
+    color: #555555
 }
