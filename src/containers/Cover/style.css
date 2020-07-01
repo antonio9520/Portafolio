@@ -6,7 +6,7 @@
     overflow: hidden;
   }
   .img {
-    height: 100%;
+    
     width: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -20,44 +20,33 @@
   /********ContentImage************/
   .container-Info {
     position: absolute;
+    height: 100%;
     z-index: 4;
   }
   .vidContent {
     position: relative;
-    top: 200px;
+    top: 70%;
     color: #f1f1f1;
     width: 100%;
     padding: 10px;
     text-align: left;
   }
   
-  .vidContent h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 4em;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+ 
+  .overlay {
+    background: rgb(255, 255, 255);
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: -1;
+    -webkit-box-shadow: 0px 21px 28px -8px #000000;
+    box-shadow: 0px 21px 28px -8px #000000;
   }
   
-  .vidContent p {
-    font-family: 'Roboto Condensed', sans-serif;
-  }
-  
-  #vidBtn {
-    font-family: 'Roboto Condensed', sans-serif;
-    display: inline-block;
-    font-size: 16px;
-    padding: 15px 40px;
-    border: none;
-    background: white;
-    color: #333;
-    cursor: pointer;
-    margin-top: 18px;
-    border-radius: 50px;
-    animation: shadow-pulse 2s infinite;
-    text-transform: uppercase;
-  }
   
   @keyframes shadow-pulse {
     0% {

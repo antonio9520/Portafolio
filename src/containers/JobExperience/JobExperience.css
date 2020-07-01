@@ -1,24 +1,77 @@
 .container-job {
   padding: 0;
-  background: rgb(51,112,65);
-background: radial-gradient(circle, rgba(51,112,65,1) 0%, rgba(17,27,17,1) 100%);
+  background: rgb(51, 112, 65);
+  background: radial-gradient(
+    circle,
+    rgba(51, 112, 65, 1) 0%,
+    rgba(17, 27, 17, 1) 100%
+  );
   min-height: 500px;
   position: relative;
   height: 130vh;
 }
 .job-title {
-  padding-top:120px;
-  padding-bottom: 140px;
+  padding-top: 24%;
+  padding-bottom: 10px;
   text-align: center;
+  color: white;
+  transition: 2s all ease;
+}
+.job-title-active {
+  padding-top: 7%;
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+  transition: 2s all ease;
+}
+.btn-show-job {
   color: white;
 }
 
+.cont-show-btn {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 300px;
+  transition: 2s all ease;
+}
+.cont-show-btn-active {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 150px;
+  transition: 2s all ease;
+}
 .container-line-end {
   padding-right: 45px;
 }
 
 .container-line {
   padding-bottom: 30px;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.container-line-active {
+  opacity: 0;
+}
+
+.lineJob-enter {
+  opacity: 0;
+}
+.lineJob-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms;
+}
+
+.lineJob-exit {
+  opacity: 1;
+}
+
+.lineJob-exit-active {
+  opacity: 0;
+  transition: opacity 2000ms;
 }
 
 /**image**/
@@ -34,7 +87,6 @@ background: radial-gradient(circle, rgba(51,112,65,1) 0%, rgba(17,27,17,1) 100%)
   -moz-animation: fadeInFromNone 2s ease-in-out;
   -o-animation: fadeInFromNone 2s ease-in-out;
   animation: fadeInFromNone 2s ease-in-out;
-  
 }
 /*****FADEIN***/
 @-webkit-keyframes fadeInFromNone {
@@ -105,8 +157,78 @@ background: radial-gradient(circle, rgba(51,112,65,1) 0%, rgba(17,27,17,1) 100%)
   }
 }
 
+/**********FadeOut*************/
+@-webkit-keyframes fadeOutFromNone {
+  0% {
+    display: block;
+    opacity: 1;
+  }
 
+  1% {
+    display: block;
+    opacity: 0;
+  }
 
+  100% {
+    display: none;
+
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOutFromNone {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOutFromNone {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutFromNone {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+
+    opacity: 0;
+  }
+}
 
 .cont-body-job {
   position: relative;
