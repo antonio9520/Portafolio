@@ -62,7 +62,7 @@ const TargetProyect = ({ proyecto }) => {
           <ExpandMore />
         </IconButton>
         </div>
-        <div>
+        <div className="cont-descripcion">
         <Collapse in={expanded} timeout="auto" unmountOnExit>
         <Typography variant="body2">{descripcion}</Typography>
         <div>
