@@ -5,6 +5,7 @@ import Layout from "../../components/Layout/Layout/Layout";
 import "./style.css";
 import video from "../../resources/videos/Mountain2.mp4"
 import Target from "./components/target/Target";
+import mountains from "../../resources/img/mountainsvectorial.svg"
 
 
 const Cover = () => {
@@ -12,10 +13,10 @@ const Cover = () => {
   return (
     <>
       <Grid container className="body">
-        {/* <img className="img" alt="body" src={image}></img> */}
-        <video id="video" className="img" loop autoPlay muted>
+      <img className="img" alt="body" src={mountains}></img> 
+        {/* <video id="video" className="img" loop autoPlay muted>
           <source src={video} type="video/mp4" />
-          </video>
+          </video> */}
         {/* <div className="overlay"></div> */}
         <Grid container className="container-Info">
           <Grid item xs={12} sm={12} md={12}>

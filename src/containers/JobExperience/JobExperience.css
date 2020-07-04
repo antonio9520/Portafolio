@@ -9,6 +9,7 @@
   min-height: 500px;
   position: relative;
   height: 130vh;
+ 
 }
 .job-title {
   padding-top: 24%;
@@ -245,3 +246,6 @@
   -webkit-box-shadow: 0px 21px 28px -8px #000000;
   box-shadow: 0px 21px 28px -8px #000000;
 }
+
+/************************************************/
+

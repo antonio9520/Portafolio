@@ -40,7 +40,7 @@ const TargetProyect = ({ proyecto }) => {
     <div className="container-targetProyect">
       <div className="cont-contenido">
         <div className="cont-img-card">
-          <img className="img-targetProyect" src={image} alt="imagen"></img>
+          <img className="img-targetProyect" src={imageURL} alt="imagen"></img>
         </div>
         <Typography className="name-proyect" variant="h5">
           {nombre}
