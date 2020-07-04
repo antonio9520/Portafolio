@@ -9,6 +9,9 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import {useHistory, useRouteMatch} from "react-router-dom"
+import { guardarProyectoAction } from "../../../actions/proyectosAction";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -23,8 +26,12 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 const NewProyect = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  
   const classes = useStyle();
-  const [image, setImage] = useState({ file: null });
+  const [image, setImage] = useState({ file: null, imageURL: "" });
+  const { imageURL } = image;
   const [check, setCheck] = useState({
     react: false,
     js: false,
@@ -43,8 +50,13 @@ const NewProyect = () => {
     proyectoURL: "",
     gitURL: "",
   });
+  const { nombre, descripcion, proyectoURL, gitURL } = proyecto;
+  const [lenguajes] = useState([]);
   const changeFile = (event) => {
-    setImage({ file: URL.createObjectURL(event.target.files[0]) });
+    setImage({
+      file: URL.createObjectURL(event.target.files[0]),
+      imageURL: event.target.files[0],
+    });
   };
   const handleCheck = (e) => {
     setCheck({ ...check, [e.target.name]: e.target.checked });
@@ -52,12 +64,56 @@ const NewProyect = () => {
   const changeProyecto = (e) => {
     setProyecto({ ...proyecto, [e.target.name]: e.target.value });
   };
+  const onsubmitproyecto = (e) => {
+    e.preventDefault();
+    if (check.react) {
+      lenguajes.push("react");
+    }
+    if (check.js) {
+      lenguajes.push("js");
+    }
+    if (check.redux) {
+      lenguajes.push("redux");
+    }
+    if (check.node) {
+      lenguajes.push("node");
+    }
+    if (check.mongo) {
+      lenguajes.push("mongo");
+    }
+    if (check.html) {
+      lenguajes.push("html");
+    }
+    if (check.css) {
+      lenguajes.push("css");
+    }
+    if (check.firebase) {
+      lenguajes.push("firebase");
+    }
+    if (check.bt4) {
+      lenguajes.push("bt4");
+    }
+    if (check.mysql) {
+      lenguajes.push("mysql");
+    }
+    dispatch(
+      guardarProyectoAction({
+        nombre,
+        descripcion,
+        proyectoURL,
+        gitURL,
+        lenguajes,
+        imageURL,
+      })
+    );
+    history.push("/admin/")
+  };
   return (
     <Fragment>
       <Grid container justify="center" className={classes.root}>
         <Typography variant="h4">Nuevo Proyecto</Typography>
         <Grid item xs={12} sm={12} md={10}>
-          <form>
+          <form onSubmit={onsubmitproyecto}>
             <Grid container justify="center">
               <Grid item xs={12} sm={10} md={8}>
                 <Grid container>
@@ -342,7 +398,7 @@ const NewProyect = () => {
               </Grid>
             </Grid>
             <div className="cont-guardarbtn">
-              <Button variant="contained" color="primary">
+              <Button type="submit" variant="contained" color="primary">
                 Guardar
               </Button>
             </div>
