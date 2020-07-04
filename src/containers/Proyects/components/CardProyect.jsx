@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }));
    
    
-const TargetProyect = ({ proyecto }) => {
+const CardProyect = ({ proyecto }) => {
 
   const dispatch = useDispatch();
 
@@ -42,6 +42,7 @@ const TargetProyect = ({ proyecto }) => {
         <div className="cont-img-card">
           <img className="img-targetProyect" src={imageURL} alt="imagen"></img>
         </div>
+        <div className="cont-typo">
         <Typography className="name-proyect" variant="h5">
           {nombre}
         </Typography>
@@ -76,8 +77,9 @@ const TargetProyect = ({ proyecto }) => {
       </Collapse>
         </div>
       </div>
+      </div>
     </div>
   );
 };
 
-export default TargetProyect;
+export default CardProyect;
