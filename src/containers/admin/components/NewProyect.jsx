@@ -9,7 +9,6 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@material-ui/core";
-import foto from "../../../resources/img/laptop2.jpg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -20,16 +19,39 @@ const useStyle = makeStyles((theme) => ({
     padding: "0 15px",
   },
   input: {
-      display: "none"
-  }
+    display: "none",
+  },
 }));
 const NewProyect = () => {
   const classes = useStyle();
-  const [image, setImage] = useState({file: null});
-
+  const [image, setImage] = useState({ file: null });
+  const [check, setCheck] = useState({
+    react: false,
+    js: false,
+    redux: false,
+    node: false,
+    mongo: false,
+    html: false,
+    css: false,
+    firebase: false,
+    bt4: false,
+    mysql: false,
+  });
+  const [proyecto, setProyecto] = useState({
+    nombre: "",
+    descripcion: "",
+    proyectoURL: "",
+    gitURL: "",
+  });
   const changeFile = (event) => {
-    setImage({ file: URL.createObjectURL(event.target.files[0]) })
-  }
+    setImage({ file: URL.createObjectURL(event.target.files[0]) });
+  };
+  const handleCheck = (e) => {
+    setCheck({ ...check, [e.target.name]: e.target.checked });
+  };
+  const changeProyecto = (e) => {
+    setProyecto({ ...proyecto, [e.target.name]: e.target.value });
+  };
   return (
     <Fragment>
       <Grid container justify="center" className={classes.root}>
@@ -46,7 +68,12 @@ const NewProyect = () => {
                     md={12}
                     className={classes.textfield}
                   >
-                    <TextField fullWidth label="Nombre"></TextField>
+                    <TextField
+                      fullWidth
+                      label="Nombre"
+                      name="nombre"
+                      onChange={changeProyecto}
+                    ></TextField>
                   </Grid>
                   <Grid
                     item
@@ -60,7 +87,9 @@ const NewProyect = () => {
                       id="outlined-textarea"
                       label="Descripción"
                       multiline
+                      name="descripcion"
                       rows={2}
+                      onChange={changeProyecto}
                     />
                   </Grid>
 
@@ -72,7 +101,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="react"
+                          checked={check.react}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="React"
                     />
                   </Grid>
@@ -84,7 +119,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="js"
+                          checked={check.js}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="JavaScript"
                     />
                   </Grid>
@@ -96,7 +137,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="redux"
+                          checked={check.redux}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="Redux"
                     />
                   </Grid>
@@ -108,7 +155,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="node"
+                          checked={check.node}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="NodeJS"
                     />
                   </Grid>
@@ -120,7 +173,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="mongo"
+                          checked={check.mongo}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="MongoDB"
                     />
                   </Grid>
@@ -132,7 +191,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="html"
+                          checked={check.html}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="Html5"
                     />
                   </Grid>
@@ -144,7 +209,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="css"
+                          checked={check.css}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="Css3"
                     />
                   </Grid>
@@ -156,7 +227,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="firebase"
+                          checked={check.firebase}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="Firebase"
                     />
                   </Grid>
@@ -168,7 +245,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="bt4"
+                          checked={check.bt4}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="Bootstrap4"
                     />
                   </Grid>
@@ -180,7 +263,13 @@ const NewProyect = () => {
                     className={classes.textfield}
                   >
                     <FormControlLabel
-                      control={<Checkbox name="checkedA" />}
+                      control={
+                        <Checkbox
+                          name="mysql"
+                          checked={check.mysql}
+                          onChange={handleCheck}
+                        />
+                      }
                       label="MySql"
                     />
                   </Grid>
@@ -191,7 +280,12 @@ const NewProyect = () => {
                     md={6}
                     className={classes.textfield}
                   >
-                    <TextField fullWidth label="Git URL"></TextField>
+                    <TextField
+                      fullWidth
+                      label="Git URL"
+                      name="gitURL"
+                      onChange={changeProyecto}
+                    ></TextField>
                   </Grid>
                   <Grid
                     item
@@ -200,7 +294,12 @@ const NewProyect = () => {
                     md={6}
                     className={classes.textfield}
                   >
-                    <TextField fullWidth label="Proyecto URL"></TextField>
+                    <TextField
+                      fullWidth
+                      label="Proyecto URL"
+                      name="proyectoURL"
+                      onChange={changeProyecto}
+                    ></TextField>
                   </Grid>
                 </Grid>
               </Grid>
@@ -243,7 +342,9 @@ const NewProyect = () => {
               </Grid>
             </Grid>
             <div className="cont-guardarbtn">
-              <Button variant="contained" color="primary">Guardar</Button>
+              <Button variant="contained" color="primary">
+                Guardar
+              </Button>
             </div>
           </form>
         </Grid>
