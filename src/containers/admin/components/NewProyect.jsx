@@ -10,7 +10,7 @@ import {
   Checkbox,
 } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import {useHistory, useRouteMatch} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import { guardarProyectoAction } from "../../../actions/proyectosAction";
 
 const useStyle = makeStyles((theme) => ({
@@ -28,22 +28,10 @@ const useStyle = makeStyles((theme) => ({
 const NewProyect = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  
+
   const classes = useStyle();
   const [image, setImage] = useState({ file: null, imageURL: "" });
   const { imageURL } = image;
-  const [check, setCheck] = useState({
-    react: false,
-    js: false,
-    redux: false,
-    node: false,
-    mongo: false,
-    html: false,
-    css: false,
-    firebase: false,
-    bt4: false,
-    mysql: false,
-  });
   const [proyecto, setProyecto] = useState({
     nombre: "",
     descripcion: "",
@@ -58,44 +46,24 @@ const NewProyect = () => {
       imageURL: event.target.files[0],
     });
   };
-  const handleCheck = (e) => {
-    setCheck({ ...check, [e.target.name]: e.target.checked });
+  const handleCheck = (lgt) => {
+    // setCheck({ ...check, [e.target.name]: e.target.checked });
+    let result = lenguajes.indexOf(lgt);
+
+    if (result !== -1) {
+      lenguajes.splice(result, 1);
+    } else {
+      lenguajes.push(lgt);
+    }
+    
   };
   const changeProyecto = (e) => {
     setProyecto({ ...proyecto, [e.target.name]: e.target.value });
+   
   };
   const onsubmitproyecto = (e) => {
     e.preventDefault();
-    if (check.react) {
-      lenguajes.push("react");
-    }
-    if (check.js) {
-      lenguajes.push("js");
-    }
-    if (check.redux) {
-      lenguajes.push("redux");
-    }
-    if (check.node) {
-      lenguajes.push("node");
-    }
-    if (check.mongo) {
-      lenguajes.push("mongo");
-    }
-    if (check.html) {
-      lenguajes.push("html");
-    }
-    if (check.css) {
-      lenguajes.push("css");
-    }
-    if (check.firebase) {
-      lenguajes.push("firebase");
-    }
-    if (check.bt4) {
-      lenguajes.push("bt4");
-    }
-    if (check.mysql) {
-      lenguajes.push("mysql");
-    }
+
     dispatch(
       guardarProyectoAction({
         nombre,
@@ -106,7 +74,7 @@ const NewProyect = () => {
         imageURL,
       })
     );
-    history.push("/admin/")
+    history.push("/admin");
   };
   return (
     <Fragment>
@@ -160,8 +128,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="react"
-                          checked={check.react}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("react")}
                         />
                       }
                       label="React"
@@ -178,8 +145,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="js"
-                          checked={check.js}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("js")}
                         />
                       }
                       label="JavaScript"
@@ -196,8 +162,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="redux"
-                          checked={check.redux}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("redux")}
                         />
                       }
                       label="Redux"
@@ -214,8 +179,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="node"
-                          checked={check.node}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("node")}
                         />
                       }
                       label="NodeJS"
@@ -232,8 +196,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="mongo"
-                          checked={check.mongo}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("mongo")}
                         />
                       }
                       label="MongoDB"
@@ -250,8 +213,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="html"
-                          checked={check.html}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("html")}
                         />
                       }
                       label="Html5"
@@ -268,8 +230,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="css"
-                          checked={check.css}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("css")}
                         />
                       }
                       label="Css3"
@@ -286,8 +247,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="firebase"
-                          checked={check.firebase}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("firebase")}
                         />
                       }
                       label="Firebase"
@@ -304,8 +264,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="bt4"
-                          checked={check.bt4}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("bt4")}
                         />
                       }
                       label="Bootstrap4"
@@ -322,8 +281,7 @@ const NewProyect = () => {
                       control={
                         <Checkbox
                           name="mysql"
-                          checked={check.mysql}
-                          onChange={handleCheck}
+                          onChange={() => handleCheck("mysql")}
                         />
                       }
                       label="MySql"

@@ -5,6 +5,10 @@ import {
   GUARDAR_PROYECTO,
   GUARDAR_EXITO,
   GUARDAR_ERROR,
+  COMENZAR_EDITAR,
+  EDITAR_EXITO,
+  EDITAR_ERROR,
+  OBTENER_EDITAR,
 } from "../types";
 import Axios from "../config/axios";
 
@@ -70,3 +74,15 @@ const guardarExito = data => ({
   type: GUARDAR_EXITO,
   payload: data,
 })
+
+export function obtenerEditarAction(proyecto){
+ return (dispatch) => {
+   dispatch(obtenerEditar(proyecto))
+ }
+}
+
+const obtenerEditar = proyecto => ({
+  type: OBTENER_EDITAR,
+  payload: proyecto
+})
+

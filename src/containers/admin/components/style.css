@@ -7,20 +7,20 @@
 .container-uploadfile{
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 70px;
    
 }
 .container-image{
    margin: 0 auto;
     width: 300px;
-    height:300px;
+    height:200px;
     text-align: center;
     
 }
 .cont-image-null{
     margin: 0 auto;
     width: 300px;
-    height:300px;
+    height:200px;
     text-align: center;
     border: 1px solid #555555;
     border-radius: 5px;

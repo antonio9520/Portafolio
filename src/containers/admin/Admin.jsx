@@ -22,7 +22,7 @@ const Admin = () => {
         <Route path={`${path}/new-proyect`}>
           <NewProyect />
         </Route>
-        <Route path={`${path}/edit-proyect`}>
+        <Route path={`${path}/edit-proyect/:id`}>
           <EditProyect />
         </Route>
       </Switch>

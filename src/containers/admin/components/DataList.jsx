@@ -10,6 +10,9 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom"
+import {useDispatch} from "react-redux"
+import { obtenerEditarAction } from "../../../actions/proyectosAction"
 
 const useStyles = makeStyles({
   root: {
@@ -18,9 +21,14 @@ const useStyles = makeStyles({
 });
 
 const DataList = ({ proyecto }) => {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const classes = useStyles();
-  const { nombre, descripcion, imageURL } = proyecto;
-
+  const { nombre, descripcion, imageURL, _id } = proyecto;
+const goEditProyect = () => {
+     dispatch(obtenerEditarAction(proyecto))
+     history.push(`/admin/edit-proyect/${_id}`)
+}
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -41,7 +49,7 @@ const DataList = ({ proyecto }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button onClick={goEditProyect} size="small" color="primary">
           Editar
         </Button>
         <Button size="small" color="primary">
