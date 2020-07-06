@@ -10,9 +10,12 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import { useHistory } from "react-router-dom"
-import {useDispatch} from "react-redux"
-import { obtenerEditarAction } from "../../../actions/proyectosAction"
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  obtenerEditarAction,
+  eliminarProyectoAction,
+} from "../../../actions/proyectosAction";
 
 const useStyles = makeStyles({
   root: {
@@ -25,10 +28,13 @@ const DataList = ({ proyecto }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const { nombre, descripcion, imageURL, _id } = proyecto;
-const goEditProyect = () => {
-     dispatch(obtenerEditarAction(proyecto))
-     history.push(`/admin/edit-proyect/${_id}`)
-}
+  const goEditProyect = (proyecto) => {
+    dispatch(obtenerEditarAction(proyecto));
+    history.push(`/admin/edit-proyect/${_id}`);
+  };
+  const deleteProyect = (id) => {
+    dispatch(eliminarProyectoAction(id));
+  };
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -49,10 +55,10 @@ const goEditProyect = () => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button onClick={goEditProyect} size="small" color="primary">
+        <Button onClick={() => goEditProyect(proyecto)} size="small" color="primary">
           Editar
         </Button>
-        <Button size="small" color="primary">
+        <Button onClick={() => deleteProyect(_id)} size="small" color="primary">
           Eliminar
         </Button>
       </CardActions>

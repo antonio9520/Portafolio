@@ -11,8 +11,7 @@ import {
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import {  } from "../../../actions/proyectosAction";
-import {setearArray} from "./function";
+import { editarProyectoAction } from "../../../actions/proyectosAction";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -29,22 +28,20 @@ const useStyle = makeStyles((theme) => ({
 const EditProyect = () => {
   const history = useHistory();
   const dispatch = useDispatch();
- 
+
   const classes = useStyle();
   const [image, setImage] = useState({ file: null, imageURL: "" });
   const { imageURL } = image;
-  const [check, setCheck] = useState({
-    react: false,
-    js: false,
-    redux: false,
-    node: false,
-    mongo: false,
-    html: false,
-    css: false,
-    firebase: false,
-    bt4: false,
-    mysql: false,
-  });
+  const [react, setReact] = useState(false);
+  const [js, setJs] = useState(false);
+  const [redux, setRedux] = useState(false);
+  const [node, setNode] = useState(false);
+  const [mongo, setMongo] = useState(false);
+  const [html, setHtml] = useState(false);
+  const [css, setCss] = useState(false);
+  const [firebase, setFirebase] = useState(false);
+  const [bt4, setBt4] = useState(false);
+  const [mysql, setMysql] = useState(false);
   const [proyecto, setProyecto] = useState({
     nombre: "",
     descripcion: "",
@@ -59,25 +56,57 @@ const EditProyect = () => {
     });
   };
   const proedit = useSelector((state) => state.proyectos.proyectoeditar);
-  const [lenguajes] = useState(proedit.lenguajes);
- 
+  const { _id } = proedit;
+
+  const [lenguajes] = useState([]);
+
   useEffect(() => {
     if (!proedit) return;
-        setProyecto({
-            ...proyecto,
-            nombre: proedit.nombre,
-            descripcion: proedit.descripcion,
-            proyectURL: proedit.proyectURL,
-            gitURL: proedit.gitURL,
-          });
-        setImage({file: proedit.imageURL}); 
-        
-        for(let i = 0; i < lenguajes.length; i++ ){
-           const name = lenguajes[i]
-                setCheck({...check, [name]: true})
-                console.log(check)
-           }
-           console.log(check)
+    setProyecto({
+      ...proyecto,
+      nombre: proedit.nombre,
+      descripcion: proedit.descripcion,
+      proyectURL: proedit.proyectURL,
+      gitURL: proedit.gitURL,
+    });
+    setImage({ file: proedit.imageURL, imageURL: proedit.imageURL });
+    for (let i = 0; i < proedit.lenguajes.length; i++) {
+      const name = proedit.lenguajes[i];
+      lenguajes.push(name);
+    }
+
+    for (let i = 0; i < lenguajes.length; i++) {
+      if (lenguajes[i] === "react") {
+        setReact(true);
+      }
+      if (lenguajes[i] === "js") {
+        setJs(true);
+      }
+      if (lenguajes[i] === "redux") {
+        setRedux(true);
+      }
+      if (lenguajes[i] === "node") {
+        setNode(true);
+      }
+      if (lenguajes[i] === "mongo") {
+        setMongo(true);
+      }
+      if (lenguajes[i] === "html") {
+        setHtml(true);
+      }
+      if (lenguajes[i] === "css") {
+        setCss(true);
+      }
+      if (lenguajes[i] === "firebase") {
+        setFirebase(true);
+      }
+      if (lenguajes[i] === "bt4") {
+        setBt4(true);
+      }
+      if (lenguajes[i] === "mysql") {
+        setMysql(true);
+      }
+    }
   }, [proedit]);
 
   const handleCheck = (lgt) => {
@@ -88,16 +117,24 @@ const EditProyect = () => {
     } else {
       lenguajes.push(lgt);
     }
-    console.log(lenguajes)
   };
   const changeProyecto = (e) => {
     setProyecto({ ...proyecto, [e.target.name]: e.target.value });
   };
   const onsubmitproyecto = (e) => {
     e.preventDefault();
-    
-    
-    history.push("/admin/");
+    dispatch(
+      editarProyectoAction({
+        nombre,
+        descripcion,
+        proyectURL,
+        gitURL,
+        lenguajes,
+        imageURL,
+        _id,
+      })
+    );
+    history.push("/admin");
   };
   return (
     <Fragment>
@@ -153,9 +190,10 @@ const EditProyect = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
+                          checked={react}
                           name="react"
-                          checked={check.react}
-                          onChange={() => handleCheck("react")}
+                          onChange={() => setReact(!react)}
+                          onClick={() => handleCheck("react")}
                         />
                       }
                       label="React"
@@ -172,9 +210,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="js"
-                          
-                          checked={check.js}
-                          onChange={() => handleCheck("js")}
+                          checked={js}
+                          onChange={() => setJs(!js)}
+                          onClick={() => handleCheck("js")}
                         />
                       }
                       label="JavaScript"
@@ -191,8 +229,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="redux"
-                          checked={check.redux}
-                          onChange={() => handleCheck("redux")}
+                          checked={redux}
+                          onChange={() => setRedux(!redux)}
+                          onClick={() => handleCheck("redux")}
                         />
                       }
                       label="Redux"
@@ -209,8 +248,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="node"
-                          checked={check.node}
-                          onChange={() => handleCheck("node")}
+                          checked={node}
+                          onChange={() => setNode(!node)}
+                          onClick={() => handleCheck("node")}
                         />
                       }
                       label="NodeJS"
@@ -227,8 +267,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="mongo"
-                          checked={check.mongo}
-                          onChange={() => handleCheck("mongo")}
+                          checked={mongo}
+                          onChange={() => setMongo(!mongo)}
+                          onClick={() => handleCheck("mongo")}
                         />
                       }
                       label="MongoDB"
@@ -245,8 +286,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="html"
-                          checked={check.html}
-                          onChange={() => handleCheck("html")}
+                          checked={html}
+                          onChange={() => setHtml(!html)}
+                          onClick={() => handleCheck("html")}
                         />
                       }
                       label="Html5"
@@ -263,8 +305,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="css"
-                          checked={check.css}
-                          onChange={() => handleCheck("css")}
+                          checked={css}
+                          onChange={() => setCss(!css)}
+                          onClick={() => handleCheck("css")}
                         />
                       }
                       label="Css3"
@@ -281,8 +324,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="firebase"
-                          checked={check.firebase}
-                          onChange={() => handleCheck("firebase")}
+                          checked={firebase}
+                          onChange={() => setFirebase(!firebase)}
+                          onClick={() => handleCheck("firebase")}
                         />
                       }
                       label="Firebase"
@@ -299,8 +343,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="bt4"
-                          checked={check.bt4}
-                          onChange={() => handleCheck("bt4")}
+                          checked={bt4}
+                          onChange={() => setBt4(!bt4)}
+                          onClick={() => handleCheck("bt4")}
                         />
                       }
                       label="Bootstrap4"
@@ -317,8 +362,9 @@ const EditProyect = () => {
                       control={
                         <Checkbox
                           name="mysql"
-                          checked={check.mysql}
-                          onChange={() => handleCheck("mysql")}
+                          checked={mysql}
+                          onChange={() => setMysql(!mysql)}
+                          onClick={() => handleCheck("mysql")}
                         />
                       }
                       label="MySql"
