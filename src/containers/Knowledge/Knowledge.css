@@ -1,6 +1,6 @@
 .container-Know {
   width: 100%;
-  height: 130vh;
+  min-height: 130vh;
   position: relative;
 }
 

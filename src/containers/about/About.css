@@ -1,0 +1,7 @@
+.container-about{
+    position: relative;
+    width: 100%;
+    min-height: 130vh;
+    background: rgb(65,59,147);
+    background: radial-gradient(circle, rgba(65,59,147,1) 0%, rgba(25,18,33,1) 100%);
+}

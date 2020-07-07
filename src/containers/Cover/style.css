@@ -1,75 +1,171 @@
 .body {
-    margin: 0;
-    position: relative;
-    width: 100%;
-    height: 105vh;
-    overflow: hidden;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 105vh;
+  overflow: hidden;
+}
+.moon {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  z-index: 500;
+  border-radius: 50%;
+  animation: animateshadow 5s infinite;
+  animation-direction: alternate;
+}
+@keyframes animateshadow {
+  0%{
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 0 0px rgba(255, 255, 255, 0.5),
+    0 0 0 0px rgba(255, 255, 255, 0.4),
+    0 0 0 0px rgba(255, 255, 255, 0.3),
+    0 0 0 0px rgba(255, 255, 255, 0.2),
+    0 0 0 0px rgba(255, 255, 255, 0.1);
   }
-  .img {
-    
-    width: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: hard-light;
-    animation: hue-rotate 10s linear infinite;
-  }
- 
-  .text-left {
-    text-align: center;
-  }
-  /********ContentImage************/
-  .container-Info {
-    position: absolute;
-    height: 100%;
-    z-index: 4;
-  }
-  .vidContent {
-    position: relative;
-    top: 70%;
-    color: #f1f1f1;
-    width: 100%;
-    padding: 10px;
-    text-align: left;
-  }
-  
- 
-  .overlay {
-    background: rgb(255, 255, 255);
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    z-index: -1;
-    -webkit-box-shadow: 0px 21px 28px -8px #000000;
-    box-shadow: 0px 21px 28px -8px #000000;
-  }
-  
-  
-  @keyframes shadow-pulse {
-    0% {
-      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
-    }
+  100%{
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 0 40px rgba(255, 255, 255, 0.4),
+    0 0 0 80px rgba(255, 255, 255, 0.3),
+    0 0 0 120px rgba(255, 255, 255, 0.2),
+    0 0 0 180px rgba(255, 255, 255, 0.1);
   }
 
-  @keyframes hue-rotate {
-    from {
-      -webkit-filter: hue-rotate(0);
-      -moz-filter: hue-rotate(0);
-      -ms-filter: hue-rotate(0);
-      filter: hue-rotate(0);
-    }
-    to {
-      -webkit-filter: hue-rotate(360deg);
-      -moz-filter: hue-rotate(360deg);
-      -ms-filter: hue-rotate(360deg);
-      filter: hue-rotate(360deg);
-    }
+}
+
+.img {
+  width: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: saturateAnimation 8s infinite;
+  animation-direction: alternate;
+}
+@keyframes saturateAnimation{
+  0%{
+    filter: saturate(0)
   }
+  100%{
+    filter: saturate(3)
+  }
+}
+.cloud1 {
+  position: absolute;
+  z-index: 1000;
+  left:0;
+  max-width: 400px;
+  animation: animatecloud 80s linear infinite;
+}
+.cloud2 {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  max-width: 400px;
+  animation: animatecloud 120s linear infinite;
+}
+.cloud3 {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  max-width: 600px;
+  animation: animatecloud 180s linear infinite;
+}
+.cloud4 {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 200px;
+  max-width: 200px;
+  animation: animatecloud 70s linear infinite;
+  animation-delay: -20s;
+}
+.cloud5 {
+  position: absolute;
+  z-index: 1000;
+  top: 50px;
+  left: 0;
+  max-width: 500px;
+  animation: animatecloud 60s linear infinite;
+  animation-delay: -5s;
+}
+.cloud6 {
+  position: absolute;
+  z-index: 1000;
+  top:75px;
+  left: 0;
+  max-width: 400px;
+  animation: animatecloud 50s linear infinite;
+  animation-delay: -10s;
+}
+
+
+
+@keyframes animatecloud {
+  0% {
+    transform: translateX(-100%) scale(1);
+  }
+  100% {
+    transform: translateX(400%) scale(1.5);
+  }
+}
+
+.text-left {
+  text-align: center;
+}
+/********ContentImage************/
+.container-Info {
+  position: absolute;
+  height: 100%;
+  z-index: 4;
+}
+.vidContent {
+  position: relative;
+  top: 70%;
+  color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+}
+
+.overlay {
+  background: rgb(255, 255, 255);
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: -1;
+  -webkit-box-shadow: 0px 21px 28px -8px #000000;
+  box-shadow: 0px 21px 28px -8px #000000;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}

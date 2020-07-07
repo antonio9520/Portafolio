@@ -16,7 +16,7 @@ const Proyects = () => {
   }, []);
 
   return (
-    <div className="container-proyects">
+    <div className="container-proyects" id="proyects">
       <Typography variant="h4" className="title-proyect">Proyects</Typography>
       <Grid container>
         {proyectos.map((proyecto) => (

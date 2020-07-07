@@ -1,13 +1,16 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { DoubleArrow } from "@material-ui/icons"
 import "./Target.css";
-import perfil from "../../../../resources/img/perfil-4.jpg";
+import {Link} from "react-scroll"
+
 const style = {
   containerTarget: {
     borderRadius: "10px",
     position: "relative",
   
   },
+  
 };
 const useStyle = makeStyles(style);
 const Target = () => {
@@ -26,6 +29,21 @@ const Target = () => {
           <div className="title-target">
             <Typography className='target-name' variant="h5">Abraham Vidal</Typography>
             <Typography className='target-subtitle' variant="subtitle2">React Developer</Typography>
+          <div style={{width: "100%",textAlign: "center"}}>
+          <Link
+              activeClass="active"
+              className="link"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+             <DoubleArrow  fontSize="large" className="icon"/>
+            </Link>
+
+            
+          </div>
           </div>
           {/* <div className="content-target">
             <Typography variant="subtitle1">

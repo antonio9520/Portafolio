@@ -18,7 +18,7 @@ const JobExperience = () => {
   };
 
   return (
-    <div className="container-job">
+    <div className="container-job" id="experience">
       {image ? <img className="img-job" alt="jobExp" src={image}></img> : null}
 
       <div className="overlay-job"></div>

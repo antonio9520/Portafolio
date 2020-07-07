@@ -57,6 +57,20 @@
   animation: fadeInFromNone 5s ease-out;
 }
 
+.icon{
+  
+  color: #fff;
+   animation: iconAnimation 1s linear infinite;
+   animation-direction: alternate; 
+}
+@keyframes iconAnimation {
+  0%{
+    transform: translateY(0) rotate(90deg);
+  }
+  100%{
+    transform: translateY(20px) rotate(90deg);
+  }
+}
 @-webkit-keyframes fadeInFromNone {
   0% {
     display: none;

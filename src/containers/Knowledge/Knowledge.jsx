@@ -100,7 +100,7 @@ const Knowledge = () => {
     setCollapse(!collapse);
   };
   return (
-    <div className="container-Know">
+    <div className="container-Know" id="knowledge">
      
       <div className="overlay-know"></div>
       <CSSTransition classNames="transition-know"

@@ -6,9 +6,9 @@
     rgba(51, 112, 65, 1) 0%,
     rgba(17, 27, 17, 1) 100%
   );
-  min-height: 500px;
+  
   position: relative;
-  height: 130vh;
+  min-height: 130vh;
  
 }
 .job-title {
